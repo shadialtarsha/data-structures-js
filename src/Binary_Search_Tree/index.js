@@ -1,4 +1,6 @@
 const BST = require('./BinarySearchTree');
+const BFS = require('../Tree_Traversal/BFS');
+const { DFSPreOrder, DFSPostOrder, DFSInOrder } = require('../Tree_Traversal/DFS');
 
 const tree = new BST();
 
@@ -8,7 +10,8 @@ tree.insert(3);
 tree.insert(8);
 tree.insert(15);
 tree.insert(20);
-tree.insert(13);
-tree.insert(100);
 
-console.log(tree.find(100));
+console.log(`BFS: ${BFS(tree)}`);
+console.log(`DFS-PreOrder: ${DFSPreOrder(tree)}`);
+console.log(`DFS-PostOrder: ${DFSPostOrder(tree)}`);
+console.log(`DFS-InOrder: ${DFSInOrder(tree)}`);
