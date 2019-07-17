@@ -32,7 +32,7 @@ class MinBinaryHeap {
       (this.values[parent] && this.values[right] && this.values[parent] > this.values[right])
     ) {
       if (this.values[parent] > this.values[left] && this.values[parent] > this.values[right]) {
-        if (this.values[parent] > this.values[left]) {
+        if (this.values[right] > this.values[left]) {
           this.swap(parent, left);
           parent = left;
         } else {

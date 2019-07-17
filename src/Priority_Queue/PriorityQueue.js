@@ -42,7 +42,7 @@ class PriorityQueue {
         this.values[parent].priority > this.values[left].priority &&
         this.values[parent].priority > this.values[right].priority
       ) {
-        if (this.values[parent].priority > this.values[left].priority) {
+        if (this.values[right].priority > this.values[left].priority) {
           this.swap(parent, left);
           parent = left;
         } else {
