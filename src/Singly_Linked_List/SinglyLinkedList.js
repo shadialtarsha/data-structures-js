@@ -137,6 +137,31 @@ class SinglyLinkedList {
     }
     return this;
   }
+
+  reverseBetween(m, n) {
+    let left = this.head;
+    let stop = false;
+    const reverse = (right, start, end) => {
+      if (end === 1) return;
+      if (start > 1) {
+        left = left.next;
+      }
+      right = right.next;
+      reverse(right, start - 1, end - 1);
+      if (right === left || right.next === left) {
+        stop = true;
+        return;
+      }
+      if (!stop) {
+        const temp = left.val;
+        left.val = right.val;
+        right.val = temp;
+        left = left.next;
+      }
+    };
+    reverse(left, m, n);
+    return this;
+  }
 }
 
 module.exports = SinglyLinkedList;
