@@ -7,6 +7,5 @@ list.push(3);
 list.push(4);
 list.push(5);
 
-list.reverseBetween(2, 4);
-
+list.reverseRecursively();
 console.log(JSON.stringify(list));

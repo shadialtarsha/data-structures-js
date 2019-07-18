@@ -138,6 +138,27 @@ class SinglyLinkedList {
     return this;
   }
 
+  reverseRecursively() {
+    let left = this.head;
+    let stop = false;
+    function recursiveAndReverse(right) {
+      if (!right.next) return;
+      right = right.next;
+      recursiveAndReverse(right);
+      if (left === right || right.next === left) {
+        stop = true;
+      }
+      if (!stop) {
+        const temp = left.val;
+        left.val = right.val;
+        right.val = temp;
+        left = left.next;
+      }
+    }
+    recursiveAndReverse(left);
+    return this;
+  }
+
   reverseBetween(m, n) {
     let left = this.head;
     let stop = false;
